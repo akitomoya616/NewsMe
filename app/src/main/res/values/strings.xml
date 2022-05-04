@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewsMe</string>
+    <string name="home_welcome">Welcome to NewsMe</string>
+    <string name="home_welcome2">The app that collects timely news just for you!</string>
+    <string name="user_name_box">User ID</string>
+    <string name="password_box">Password</string>
+    <string name="log_in">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="home_page">Home Page</string>
+</resources>

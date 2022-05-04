@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/miui12"
+    tools:context=".MainActivity">
+
+    <!-- marginTop set the height to the box above (in this case it is the top edge)-->
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:fontFamily="cursive"
+        android:text="@string/home_welcome"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
+
+    <!-- maxEms for setting the max number of words show up per line-->
+    <!-- ellipsize="end" for setting the words left to "..."-->
+    <TextView
+        android:id="@+id/welcome_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-light"
+        android:maxEms="20"
+
+        android:maxLines="1"
+        android:text="@string/home_welcome2"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!-- for asking input, change TextView to EditText-->
+    <!-- for limiting input to given number of lines, use maxLines and inputType together!-->
+    <!-- set background = a new one created in drawable to make the box look better-->
+    <EditText
+        android:id="@+id/user_name_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/user_name_box"
+
+        android:maxLines="1"
+        android:inputType="text"
+
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        android:background="@drawable/bg_login_box" />
+
+
+    <!-- inputType=textPassword set all input to "*"-->
+    <EditText
+        android:id="@+id/password_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/password_box"
+        android:inputType="textPassword"
+
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        android:background="@drawable/bg_login_box" />
+
+    <!-- create another horizontal linear layout
+    to make login and sign up button on the same line-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <!-- in the following two buttons,
+        set width to 0dp and weight to 1, so that they will share equal size in the same line -->
+
+        <Button
+            android:id="@+id/login_button"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:layout_gravity="center"
+
+            android:layout_marginLeft="50dp"
+
+            android:background="@drawable/bg_login_box" />
+
+        <!-- use marginLeft to make the second button a little bit away from the first one
+        but still sharing equal spaces-->
+
+        <Button
+            android:id="@+id/sign_up_button"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:layout_gravity="center"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="50dp"
+
+            android:background="@drawable/bg_login_box" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
