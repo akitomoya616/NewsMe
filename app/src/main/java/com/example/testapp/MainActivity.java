@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast toastCenter = Toast.makeText(getApplicationContext(), login_fail, Toast.LENGTH_SHORT); // Same as the method above but without calling show()
             toastCenter.setGravity(Gravity.CENTER, 0, 0);
             toastCenter.show();
-
         }
 
     }
