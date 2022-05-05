@@ -6,17 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".HomePage"
 
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/home_page_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_page"
-        android:textSize="25sp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        />
+<!--    Use helper code in SlideMenu.java-->
+    <com.example.testapp.SlideMenu
+        android:id="@+id/slide_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        Load layout of the slide menu-->
+        <include layout="@layout/layout_menu"/>
+
+<!--        Load layout of the main screen-->
+        <include layout="@layout/layout_main"/>
+
+    </com.example.testapp.SlideMenu>
+
 
 </LinearLayout>
