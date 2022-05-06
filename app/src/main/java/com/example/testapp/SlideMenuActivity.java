@@ -11,16 +11,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
-public class SlideMenu extends FrameLayout {
+public class SlideMenuActivity extends FrameLayout {
     private View menuView,mainView;
     private int menuWidth;
     private Scroller scroller;
 
-    public SlideMenu(Context context) {
+    public SlideMenuActivity(Context context) {
         super(context); init();
     }
 
-    public SlideMenu(Context context, AttributeSet attrs) {
+    public SlideMenuActivity(Context context, AttributeSet attrs) {
         super(context, attrs); init();
     }
 

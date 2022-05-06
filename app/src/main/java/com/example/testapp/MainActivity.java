@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             // Set the original page we are staying at and the page we want to jump to
-            intent = new Intent(MainActivity.this, HomePage.class);
+            intent = new Intent(MainActivity.this, HomeActivity.class);
             // Call startActivity with this intent to process this jump
             startActivity(intent);
         }
