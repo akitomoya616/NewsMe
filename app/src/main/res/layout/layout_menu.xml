@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT set layout_width = match patent, set it to some actual value smaller than the whole screen width
+otherwise it will not load at all-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="270dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/menu_page_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/menu_title"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+</LinearLayout>
