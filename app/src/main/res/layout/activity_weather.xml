@@ -1,16 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--Use ScrollView to make this page scrollable
+in this case, set orientation = vertical (and height HAS TO BE wrap_content) to make it vertically scrollable
+otherwise set orientation = horizontal (and width HAS TO BE wrap_content) to make it horizontally scrollable
+
+Also, ScrollView can have ONLY ONE Child object in it.
+To add more elements into this ScrollView, please add LinearLayout inside ScrollView
+and add objects like ImageView, TextView, EditText, etc under this LinearLayout!-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".WeatherActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".WeatherActivity"
+    android:background="@drawable/background">
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:src="@drawable/android12wallpaper"
-        android:layout_gravity="center"/>
+<!-- The width or the height setting
+has to follow the one in ScrollView (due to orientation setting)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/weather_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_report"
+            android:textSize="50sp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:fontFamily="cursive"
+            android:textColor="@color/white"/>
+
+<!--       todo: delete this image later-->
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/android12wallpaper"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/weather_page_choose_city_text"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_page_choose_city"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:layout_gravity="center"/>
+
+
+<!--Create a radio button using RadioGroup-->
+        <RadioGroup
+            android:id="@+id/city_buttons"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+<!--Checked = true to set a button to be chosen by default-->
+            <RadioButton
+                android:id="@+id/weather_location_button_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/boulder"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/weather_location_button_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/houston"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"/>
+
+            <RadioButton
+                android:id="@+id/weather_location_button_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_city"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/weather_page_feedback_text"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feedback_text"
+                android:textSize="24sp"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/feedback_weather_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weather_page_is_good"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <CheckBox
+                android:id="@+id/feedback_weather_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weather_page_is_bad"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <CheckBox
+                android:id="@+id/feedback_camera_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/camera_page_is_good"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <CheckBox
+                android:id="@+id/feedback_camera_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/camera_page_is_bad"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+            <CheckBox
+                android:id="@+id/feedback_no_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_answer"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginBottom="50dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
