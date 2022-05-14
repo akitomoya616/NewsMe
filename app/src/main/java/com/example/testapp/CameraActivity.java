@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class HomePage extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+
+        // Hide the black title bar
+        getSupportActionBar().hide();
+
+        setContentView(R.layout.activity_camera);
     }
 }

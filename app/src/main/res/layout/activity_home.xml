@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+
+    android:orientation="vertical">
+
+<!--    Use helper code in SlideMenu.java
+        this allows the page to create a slide page in it-->
+    <com.example.testapp.SlideMenuActivity
+        android:id="@+id/slide_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        Load layout of the slide menu-->
+        <include layout="@layout/layout_menu"/>
+
+<!--        Load layout of the main screen-->
+        <include layout="@layout/layout_main"/>
+
+    </com.example.testapp.SlideMenuActivity>
+
+
+</LinearLayout>
