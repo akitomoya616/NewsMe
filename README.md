@@ -13,3 +13,7 @@ This is an Android App demo created by Sitong Lu alone (still WIP).
 - [2022/5/5] Two ways to call `setOnClickListener` on buttons for handling their events once being clicked (check [HomeActivity.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/HomeActivity.java)).
 
 - [2022/5/7] Make Weather page a vertically scrollable page, together with radio buttons and checkboxes (each set with `setOnCheckedChangeListener` method) (check [WeatherActivity.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherActivity.java) and [activity_weather.xml](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/res/layout/activity_weather.xml)).
+
+- [2020/5/7] Gif demo of the login function, the navigation drawer menu, and scrollable page
+![demo gif](/pic/Login_Drawer_Scroll.gif)
+
