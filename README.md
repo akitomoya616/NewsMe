@@ -17,6 +17,6 @@ This is an Android App demo created by Sitong Lu alone (still WIP).
 - [2022/5/7] Gif demo of the login function, the navigation drawer menu, and scrollable page:
 ![demo gif](/pic/Login_Drawer_Scroll.gif)
   
-- [2022/5/21] Change app icon to a new one by adding new imagep asset using the following [tutorial](https://developer.android.com/studio/write/image-asset-studio#create-adaptive).
+- [2022/5/21] Change app icon to a new one by adding new image asset (with automatic size adjustment) using the following [tutorial](https://developer.android.com/studio/write/image-asset-studio#create-adaptive).
 ![app icon](app/src/main/ic_launcher-playstore.png)
 
