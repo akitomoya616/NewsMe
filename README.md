@@ -18,4 +18,5 @@ This is an Android App demo created by Sitong Lu alone (still WIP).
 ![demo gif](/pic/Login_Drawer_Scroll.gif)
   
 - [2022/5/21] Change app icon to a new one by adding new imagep asset using the following [tutorial](https://developer.android.com/studio/write/image-asset-studio#create-adaptive).
+![app icon](app/src/main/ic_launcher-playstore.png)
 
