@@ -35,13 +35,23 @@ has to follow the one in ScrollView (due to orientation setting)-->
             android:fontFamily="cursive"
             android:textColor="@color/white"/>
 
-<!--       todo: delete this image later-->
-        <ImageView
+        <Button
+            android:id="@+id/btVar1"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/android12wallpaper"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Get Weather"
+            android:textSize="20dp" />
+
+<!--       todo: delete this image later-->
+<!--        <ImageView-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/android12wallpaper"-->
+<!--            android:layout_gravity="center_horizontal"/>-->
 
         <TextView
             android:id="@+id/weather_page_choose_city_text"
