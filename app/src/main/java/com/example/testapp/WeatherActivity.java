@@ -146,8 +146,11 @@ public class WeatherActivity extends AppCompatActivity {
                 if (city.isEmpty()) {
                     Toast.makeText(WeatherActivity.this, "Empty city name!", Toast.LENGTH_SHORT).show();
                 } else {
+                    // first show loading icon and hide weather page
+                    loading_icon.setVisibility(View.VISIBLE);
+                    homeRL.setVisibility(View.GONE);
                     city_name.setText(city);
-                    getWeatherInfo(city);
+                    getWeatherInfo(city); // disable loading icon and reshow weather page in this method
                 }
             }
         });
