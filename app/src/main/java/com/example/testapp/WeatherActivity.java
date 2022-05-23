@@ -226,12 +226,14 @@ public class WeatherActivity extends AppCompatActivity {
     // The following url was directly copied from Call section in https://www.weatherapi.com/api-explorer.aspx#forecast
     // But by replacing the city name Boulder with var city_name
     private void getWeatherInfo(String city_name){
+        /**
+         * Make sure url starts with HTTPS but not with HTTP if we are working with Android 9 or higher!
+         * Reference:
+         * https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted
+         */
         String url = "https://api.weatherapi.com/v1/forecast.json?key=4f355d97cfb44cc4a99195003222205&q="
                 + city_name + "&days=1&aqi=yes&alerts=yes";
-        Log.d("TAG", "url is: " + url);
         this.city_name.setText(city_name);
-
-        Toast.makeText(WeatherActivity.this, city_name, Toast.LENGTH_SHORT).show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(WeatherActivity.this);
 
@@ -257,12 +259,12 @@ public class WeatherActivity extends AppCompatActivity {
                     String conditionIcon = response.getJSONObject("current").getJSONObject("condition").getString("icon");
                     Picasso.get().load("http:".concat(conditionIcon)).into(temperature_icon);
                     weather_condition.setText(condition);
-                    if(isDay == 1){
+                    if(isDay == 1){ // check if currently daytime or not
                         // if morning
-                        Picasso.get().load("https://simplifaster.com/wp-content/uploads/2017/05/Sunshine-Vitamin-D.jpg").into(background);
+                        Picasso.get().load("https://ipt.imgix.net/201443/x/0/how-and-why-you-should-shoot-vertical-landscape-photos-2.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883").into(background);
                     }
                     else{
-                        Picasso.get().load("http://meetingmediagroup.com/data/meetingmediagroup.com/upload/cms/attributeinstance/10/3027/file.o.jpg").into(background);
+                        Picasso.get().load("https://ipt.imgix.net/201444/x/0/how-and-why-you-should-shoot-vertical-landscape-photos-3.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883").into(background);
                     }
 
                     JSONObject forcastObj = response.getJSONObject("forecast");
@@ -291,6 +293,7 @@ public class WeatherActivity extends AppCompatActivity {
             // Otherwise just warn the user
             public void onErrorResponse(VolleyError error) {
 
+                Log.e("ERROR", "Error occurred ", error);
 
                 Toast.makeText(WeatherActivity.this, "Please enter valid city name", Toast.LENGTH_SHORT).show();
             }
