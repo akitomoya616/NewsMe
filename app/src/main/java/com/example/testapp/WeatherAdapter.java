@@ -38,11 +38,12 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull WeatherAdapter.ViewHolder holder, int position) {
         // Get the model that contains all the weather information using the API on Postman
+        // the array list stores the forecasted weather in the next few hours
         WeatherModel model = weather_model_arraylist.get(position);
         // model.getIcon returns the icon representing the current weather in the user area
         // e.g. //cdn.weatherapi.com/weather/64x64/day/122.png
         // therefore we need to add http in the front to load it
-        Picasso.get().load("http:".concat(model.getIcon())).into(holder.condition_icon);
+        Picasso.get().load("https:".concat(model.getIcon())).into(holder.condition_icon);
         // Do the same thing for temperature and wind speed
         holder.temperature.setText(model.getTemperature()+"°C");
         holder.wind_speed.setText(model.getWind_speed()+"KM/H");

@@ -64,7 +64,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView city_name, temperature_value, weather_condition;
     private RecyclerView weatherRV;
     private EditText city_input;
-    private ImageView background, search_icon, temperature_icon;
+    private ImageView background, search_icon, condition_icon;
 
     private ArrayList<WeatherModel> weather_model_arraylist;
     private WeatherAdapter weather_adapter;
@@ -73,9 +73,6 @@ public class WeatherActivity extends AppCompatActivity {
     private int PERMISSION_CODE = 1;
 
     private String cityName;
-
-    private String bestProvider;
-    private Criteria criteria;
 
 
     @Override
@@ -106,7 +103,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         background = findViewById(R.id.weather_background);
         search_icon = findViewById(R.id.weather_search_icon);
-        temperature_icon = findViewById(R.id.temperature_icon);
+        condition_icon = findViewById(R.id.condition_icon);
 
         weather_model_arraylist = new ArrayList<>();
         weather_adapter = new WeatherAdapter(this, weather_model_arraylist);
@@ -137,15 +134,14 @@ public class WeatherActivity extends AppCompatActivity {
             Toast.makeText(WeatherActivity.this, "No location!", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(WeatherActivity.this, "Found location", Toast.LENGTH_SHORT).show();
+            Toast.makeText(WeatherActivity.this, "Location detected", Toast.LENGTH_SHORT).show();
             Log.d("TAG", "Longitude is: " + location.getLongitude());
             Log.d("TAG", "Latitude is: " + location.getLatitude());
         }
 
 
-//        cityName = get_city_name(location.getLongitude(), location.getLatitude()); // city name returned by api
-//        getWeatherInfo(cityName);
-        cityName = "London";
+        cityName = get_city_name(location.getLongitude(), location.getLatitude()); // city name returned by api
+        //cityName = "London";
         getWeatherInfo(cityName);
 
 
@@ -209,6 +205,7 @@ public class WeatherActivity extends AppCompatActivity {
                     System.out.println("city name: " + city);
                     if(city != null && !city.equals("")){
                         city_name = city;
+                        break; // once found city, just break the loop, otherwise there will be more toast warnings coming up in else condition
                     }
                     else{
                         Log.d("TAG", "CITY NOT FOUND");
@@ -257,20 +254,21 @@ public class WeatherActivity extends AppCompatActivity {
                     int isDay = response.getJSONObject("current").getInt("is_day");
                     String condition = response.getJSONObject("current").getJSONObject("condition").getString("text");
                     String conditionIcon = response.getJSONObject("current").getJSONObject("condition").getString("icon");
-                    Picasso.get().load("http:".concat(conditionIcon)).into(temperature_icon);
+                    Picasso.get().load("https:".concat(conditionIcon)).into(condition_icon);
                     weather_condition.setText(condition);
                     if(isDay == 1){ // check if currently daytime or not
                         // if morning
                         Picasso.get().load("https://ipt.imgix.net/201443/x/0/how-and-why-you-should-shoot-vertical-landscape-photos-2.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883").into(background);
                     }
                     else{
-                        Picasso.get().load("https://ipt.imgix.net/201444/x/0/how-and-why-you-should-shoot-vertical-landscape-photos-3.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883").into(background);
+                        Picasso.get().load("https://www.teahub.io/photos/full/11-119758_sky-4k-5k-wallpaper-8k-stars-mountains-night.jpg").into(background);
                     }
 
                     JSONObject forcastObj = response.getJSONObject("forecast");
-                    JSONObject forcast0 = forcastObj.getJSONArray("forcastday").getJSONObject(0);
+                    JSONObject forcast0 = forcastObj.getJSONArray("forecastday").getJSONObject(0);
                     JSONArray hourArray = forcast0.getJSONArray("hour");
 
+                    // Load the day in hourArray to display today's weather in the coming hours
                     for(int i=0; i<hourArray.length(); i++){
                         JSONObject hourObj = hourArray.getJSONObject(i);
                         String time = hourObj.getString("time");
@@ -282,6 +280,9 @@ public class WeatherActivity extends AppCompatActivity {
 
                     }
 
+                    // after collecting forecasted weather info into model_arraylist,
+                    // weather adapter will go through the array and put time, temp_c, icon, wind_kph
+                    // per predicted in the corresponding box. Check WeatherAdapter.java!
                     weather_adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
