@@ -119,15 +119,6 @@ public class WeatherActivity extends AppCompatActivity {
 
         }
 
-//        Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-//
-//        if(location == null){
-//            Toast.makeText(WeatherActivity.this, "No location!", Toast.LENGTH_SHORT).show();
-//            criteria = new Criteria();
-//            bestProvider = String.valueOf(locationManager.getBestProvider(criteria, true)).toString();
-//            locationManager.requestLocationUpdates(bestProvider, 1000, 0, (LocationListener) this);
-//        }
-
         Location location = getLastKnownLocation();
 
         if(location == null){
@@ -141,6 +132,9 @@ public class WeatherActivity extends AppCompatActivity {
 
 
         cityName = get_city_name(location.getLongitude(), location.getLatitude()); // city name returned by api
+        /**
+         * For testing virtual devices, just comment out the last line and set cityName manually
+         */
         //cityName = "London";
         getWeatherInfo(cityName);
 
@@ -150,7 +144,7 @@ public class WeatherActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String city = city_input.getText().toString();
                 if (city.isEmpty()) {
-                    Toast.makeText(WeatherActivity.this, String.valueOf(location.getLongitude()), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WeatherActivity.this, "Empty city name!", Toast.LENGTH_SHORT).show();
                 } else {
                     city_name.setText(city);
                     getWeatherInfo(city);
