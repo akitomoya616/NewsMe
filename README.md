@@ -20,3 +20,5 @@ This is an Android App demo created by Sitong Lu alone (still WIP).
 - [2022/5/21] Change app icon to a new one by adding new image asset (with automatic size adjustment) using the following [tutorial](https://developer.android.com/studio/write/image-asset-studio#create-adaptive).
 ![app icon](app/src/main/ic_launcher-playstore.png)
 
+- [2022/5/23] Implemented the Weather page using [WeatherActivity.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherActivity.java), [WeatherAdapter.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherAdapter.java), [WeatherModel.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherModel.java), [card_back.xml](app/src/main/res/drawable/card_back.xml), [activity_weather.xml](app/src/main/res/layout/activity_weather.xml), [weather_item.xml](app/src/main/res/layout/weather_item.xml).
+
