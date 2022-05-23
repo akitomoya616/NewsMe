@@ -21,7 +21,7 @@ This is an Android App demo created by Sitong Lu alone (still WIP).
 ![app icon](app/src/main/ic_launcher-playstore.png)
 
 - [2022/5/23] Implemented the Weather page using 
-  - **Reminder**: for using Android 9 and above, please let all url starting with `https` BUT NOT with `http`, otherwise JsonObjectRequest will not response!
+  - **Reminder**: for using Android 9 and above, please let all url starting with `https` BUT NOT with `http`, otherwise JsonObjectRequest will not respond!
   - [WeatherActivity.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherActivity.java) (mainly responsible for getting user location, weather info using API call, displaying today's weather info at the center of the screen, passing weather forecast info for the next few hours to WeatherAdapter, and making all the buttons on the weather page runnable), 
   - [WeatherAdapter.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherAdapter.java) (mainly responsible for getting `weather_model_arraylist` that contains the forecasted weather for the coming hours, and put each data into specific weather card), 
   - [WeatherModel.java](https://github.com/akitomoya616/NewsMe/blob/main/app/src/main/java/com/example/testapp/WeatherModel.java) (initialized object that stores `time`, `temperature`, `weather icon`, `wind speed` info to be putted into `weather_model_arraylist`), 
