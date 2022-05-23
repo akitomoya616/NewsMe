@@ -82,6 +82,9 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Hide the black title bar
+        getSupportActionBar().hide();
+
 
         // Make application full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -223,7 +226,7 @@ public class WeatherActivity extends AppCompatActivity {
     // The following url was directly copied from Call section in https://www.weatherapi.com/api-explorer.aspx#forecast
     // But by replacing the city name Boulder with var city_name
     private void getWeatherInfo(String city_name){
-        String url = "http://api.weatherapi.com/v1/forecast.json?key=4f355d97cfb44cc4a99195003222205&q="
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=4f355d97cfb44cc4a99195003222205&q="
                 + city_name + "&days=1&aqi=yes&alerts=yes";
         Log.d("TAG", "url is: " + url);
         this.city_name.setText(city_name);

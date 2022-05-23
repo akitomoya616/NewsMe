@@ -10,7 +10,8 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // Hide the black title bar
+        getSupportActionBar().hide();
 
         setContentView(R.layout.activity_camera);
     }
