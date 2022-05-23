@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Hide the black title bar
-        getSupportActionBar().hide();
+
 
         // set the activity with a UI layout (coded in the xml file)
         setContentView(R.layout.activity_main);

@@ -22,4 +22,5 @@
     <string name="no_answer">I prefer not to answer</string>
     <string name="camera_page_is_good">Camera page is good</string>
     <string name="camera_page_is_bad">Camera page is bad</string>
+    <string name="enter_city_name_here">Enter city name here</string>
 </resources>
