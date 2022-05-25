@@ -2,6 +2,8 @@ package com.example.testapp;
 
 public class WeatherModel {
 
+    // Stores parameter needed for widget created in weather_item.xml
+
     private String time;
     private String temperature;
     private String icon;

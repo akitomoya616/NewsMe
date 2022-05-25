@@ -31,6 +31,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     @NonNull
     @Override
     public WeatherAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // call weather_item.xml here to use the widget designed in it
         View view = LayoutInflater.from(context).inflate(R.layout.weather_item, parent, false);
         return new ViewHolder(view);
     }
